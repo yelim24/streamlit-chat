@@ -75,7 +75,7 @@ if prompt := st.chat_input("당신의 고민을 말씀해주세요"):
         ]
         messages.insert(0, {"role": "system", "content": instructions})
         
-        messages[-1] = {"role": "user", "content": prompt} #+ user_instruction}
+        messages[-1] = {"role": "user", "content": prompt} + user_instruction}
         
         stream = client.chat.completions.create(
             model=st.session_state["openai_model"],
